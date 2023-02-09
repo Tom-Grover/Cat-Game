@@ -1,0 +1,3 @@
+on thread safety concern is that that new threads are created for actors when thay are painted and their logic. this presents a synchronisation problem that could cause crashes if they get too far out of sync causing the actor to be painted on a different square to where it actualy is.
+
+to help solve the synchronisation problem I added the synchronised keyword to the update(line 37), keypressed(149), keyreleased(164), paint (209) and actor(200) functions in stage. by synchronising these functions it means that they only run in the correct order so the actors cannot be painted before their position has been determined which causes the game to freeze.
